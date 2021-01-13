@@ -72,7 +72,7 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = timeGenesisBlock; // Sat, December 15, 2018 8:00:00 PM
+        genesis.nTime    = timeGenesisBlock;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
         genesis.nNonce   = 21595;
 
@@ -102,8 +102,8 @@ public:
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
         nPoolMaxTransactions = 9;
-        strMNenginePoolDummyAddress = "CcABDmWkcSZPw8rMtoobShVFuudhf1svZu"; // EDIT: CcABDmWkcSZPw8rMtoobShVFuudhf1svZu
-        strDevOpsAddress = "Ce1XyENjUHHPBt8mxy2LupkH2PnequevMM"; // EDIT: Ce1XyENjUHHPBt8mxy2LupkH2PnequevMM
+        strMNenginePoolDummyAddress = "zCnZ9tjLiHCCz5ino9LBZEHDWc8oyDUXT1";
+        strDevOpsAddress = "zT5ND7QF11J8AfkxCqqfD9VAYNAqFKfFvh";
         nEndPoWBlock = 0x7fffffff; //EDIT: nEndPoWBlock_v2
         nStartPoSBlock = 1;
     }
