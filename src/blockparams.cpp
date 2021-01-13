@@ -512,7 +512,7 @@ bool fMNtier2()
 //
 int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 {
-    int64_t nSubsidy = nBlockStandardPoWReward;
+    int64_t nSubsidy = (nBlockStandardReward-(0.45*COIN));// Gets us to 0.75 for PoW as requested
 
     if(nHeight > nReservePhaseStart) {
         if(pindexBest->nMoneySupply < (nBlockRewardReserve * 100)) {
@@ -536,7 +536,7 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 //
 int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
 {
-    int64_t nSubsidy = nBlockStandardPoSReward;
+    int64_t nSubsidy = (nBlockStandardReward-(0.75*COIN));// Gets us to 0.45 for PoS as requested
 
     if(pindexPrev->nHeight+1 > nReservePhaseStart) { // If, all 100 blocks of the premine isn't done, then next blocks have premine value
         if(pindexBest->nMoneySupply < (nBlockRewardReserve * 100)) {

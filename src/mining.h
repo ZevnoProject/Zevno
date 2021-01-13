@@ -20,10 +20,6 @@ static const int64_t nGenesisBlockReward = 1 * COIN;
 static const int64_t nBlockRewardReserve = 22400 * COIN; // premine 22,400 over 100 blocks = 2,240,000 ZEV
 /** Standard block subsidy */
 static const int64_t nBlockStandardReward = 2.5 * COIN; // total reward
-/** Standard PoW block subsidy */
-static const int64_t nBlockStandardPoWReward = 0.75 * COIN; // total reward
-/** Standard PoS block subsidy */
-static const int64_t nBlockStandardPoSReward = 0.45 * COIN; // total reward
 /** Block spacing preferred */
 static const int64_t BLOCK_SPACING = (2 * 60); // Two Minute
 /** Block spacing minimum */
