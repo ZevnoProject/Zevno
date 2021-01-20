@@ -40,7 +40,7 @@ Zevno uses
 
 
 General Specs
-
+	Maximum Supply: 28,000,000
 	Block Spacing: 2 Minute ± 30 seconds
 	Stake Minimum Age: 30 Confirmations (PoS-v3)
 	Port: 11222
