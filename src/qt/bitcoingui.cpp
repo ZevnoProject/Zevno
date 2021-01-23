@@ -3,6 +3,7 @@
  *
  * W.J. van der Laan 2011-2012
  * The Zevno Developers 2018-2020
+ * The Zevno Developers 2021
  */
 
 #include <QApplication>
@@ -234,7 +235,7 @@ ZevnoGUI::ZevnoGUI(QWidget *parent):
 
     if (!fUseDarkTheme)
     {
-        statusBar()->setStyleSheet("#statusBar { color: #ffffff; background-color: #e91e63; }");
+        statusBar()->setStyleSheet("#statusBar { color: #ffffff; background-color: #fad745; }");
     }
 
     syncIconMovie = new QMovie(fUseDarkTheme ? ":/movies/update_spinner_black" : ":/movies/update_spinner", "mng", this);
@@ -461,13 +462,15 @@ void ZevnoGUI::createToolBars()
 
     if(!fUseDarkTheme)
     {
-        toolbar->setStyleSheet("QToolButton { color: #ffffff; font-weight:bold; } QToolButton:hover { background-color: #d01a58; } QToolButton:checked { background-color: #a31445; } QToolButton:pressed { background-color: #e42b6a; } #tabs { color: #ffffff; background-color: #e91e63; }");
+        toolbar->setStyleSheet("QToolButton { color: #ffffff; font-weight:bold; } QToolButton:hover { background-color: #e1c13e; } QToolButton:checked { background-color: #af9630; } QToolButton:pressed { background-color: #c8ac37; } #tabs { color: #ffffff; background-color: #fad745; }");
     }
 
     QLabel* header = new QLabel();
     header->setMinimumSize(142, 142);
     header->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    header->setPixmap(QPixmap(fUseDarkTheme ? ":/images/header-dark" : ":/images/header"));
+    QMovie *SYNCmovie = new QMovie(":/images/header");
+    header->setMovie(SYNCmovie);
+    SYNCmovie->start();// Set syncing animation
     header->setMaximumSize(142,142);
     header->setScaledContents(true);
     toolbar->addWidget(header);
@@ -733,7 +736,7 @@ void ZevnoGUI::setNumBlocks(int count)
         progressBarLabel->setVisible(true);
         progressBarLabel->setStyleSheet("QLabel { color: #ffffff; background-color: #41454d; }");
         if(!fUseDarkTheme){
-        progressBarLabel->setStyleSheet("QLabel { color: #ffffff; background-color: #e91e63; }");
+        progressBarLabel->setStyleSheet("QLabel { color: #ffffff; background-color: #fad745; }");
         }
         progressBar->setFormat(tr("%1 behind").arg(timeBehindText));
         progressBar->setMaximum(totalSecs);
